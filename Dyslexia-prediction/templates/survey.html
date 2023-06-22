@@ -1,0 +1,744 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>survey page</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='survey.css') }}">
+</head>
+
+<body>
+    <header>
+        <br>
+        <span><a href="home.html">Home</a></span>
+        <span><a href="about.html">About</a></span>
+        <span id="select"><a href="survey.html">Survey</a></span>
+        <span id=><a href="quiz.html">Quiz</a></span>
+        <span id="last"><a href="predict.html">Predict</a></span>
+    </header>
+    <div class="parallax1">
+        <div id="warning">
+            <centre> This survey is specially designed for parents and teachers to test if their child/student is
+                dyslexic or not. This survey is based on your keen observation towards your child/student.
+            </centre>
+        </div>
+    </div>
+    <div class="main">
+        <form name="survey" method="post" action="survey.php">
+            <div class="question">
+
+                <span id="question">
+                    Question 1
+                </span><br><br>
+                <div class="content" onclick="q1score()">
+                    Did your child struggle to learn to count?<br>
+                    <input type="radio" id="q1a" name="q1" value="0">
+                    <label for="q1a">Yes-frequently</label><br>
+                    <input type="radio" id="q1b" name="q1" value="2">
+                    <label for="q1b">Sometimes</label><br>
+                    <input type="radio" id="q1c" name="q1" value="4">
+                    <label for="q1c">No-never</label><br>
+                </div>
+                <br>
+
+                <span id="question">
+                    Question 2
+                </span><br><br>
+                <div class="content" onclick="q2score()">
+                    Does he/she say numbers out of order, long after peers have mastered this skill?<br>
+                    <input type="radio" id="q2a" name="q2" value="0">
+                    <label for="q2a">Yes-frequently</label><br>
+                    <input type="radio" id="q2b" name="q2" value="2">
+                    <label for="q2b">Sometimes</label><br>
+                    <input type="radio" id="q2c" name="q2" value="4">
+                    <label for="q2c">No-never</label><br>
+                </div>
+                <br>
+
+                <span id="question">
+                    Question 3
+                </span><br><br>
+                <div class="content" onclick="q3score()">
+                    Does your child not seem to understand the connection between the symbol "4" and the word "four"?
+                    Does he make mistakes when reading or following directions involving numbers, words and symbols?<br>
+                    <input type="radio" id="q3a" name="q3" value="0">
+                    <label for="q3a">Yes-frequently</label><br>
+                    <input type="radio" id="q3b" name="q3" value="2">
+                    <label for="q3b">Sometimes</label><br>
+                    <input type="radio" id="q3c" name="q3" value="4">
+                    <label for="q3c">No-never</label><br>
+                </div>
+                <br>
+
+                <span id="question">
+                    Question 4
+                </span><br><br>
+                <div class="content" onclick="q4score()">
+                    Does your child struggle to connect the concept of numbers to real-world items? When you ask him how
+                    many
+                    cookies are left, for example, does he seem confused by the question or answer incorrectly?<br>
+                    <input type="radio" id="q4a" name="q4" value="0">
+                    <label for="q4a">Yes-frequently</label><br>
+                    <input type="radio" id="q4b" name="q4" value="2">
+                    <label for="q4b">Sometimes</label><br>
+                    <input type="radio" id="q4c" name="q4" value="4">
+                    <label for="q4c">No-never</label><br>
+                </div>
+                <br>
+
+                <span id="question">
+                    Question 5
+                </span><br><br>
+                <div class="content" onclick="q5score()">
+                    Does your child not seem to understand the difference between adding and subtracting? Does she
+                    confuse the +
+                    and - symbols when completing math problems?<br>
+                    <input type="radio" id="q5a" name="q5" value="0">
+                    <label for="q5a">Yes-frequently</label><br>
+                    <input type="radio" id="q5b" name="q5" value="2">
+                    <label for="q5b">Sometimes</label><br>
+                    <input type="radio" id="q5c" name="q5" value="4">
+                    <label for="q5c">No-never</label><br>
+                </div>
+                <br>
+
+                <span id="question">
+                    Question 6
+                </span><br><br>
+                <div class="content" onclick="q6score()">
+                    Does your child still count on his fingers past third grade?<br>
+                    <input type="radio" id="q6a" name="q6" value="0">
+                    <label for="q6a">Yes-frequently</label><br>
+                    <input type="radio" id="q6b" name="q6" value="2">
+                    <label for="q6b">Sometimes</label><br>
+                    <input type="radio" id="q6c" name="q6" value="4">
+                    <label for="q6c">No-never</label><br>
+                </div>
+                <br>
+
+                <span id="question">
+                    Question 7
+                </span><br><br>
+                <div class="content" onclick="q7score()">
+                    Difficulty sustaining attention; seems "hyper" or "daydreamer"?<br>
+                    <input type="radio" id="q7a" name="q7" value="0">
+                    <label for="q7a">Yes</label><br>
+                    <input type="radio" id="q7b" name="q7" value="4">
+                    <label for="q7b">No</label><br>
+                    <input type="radio" id="q7c" name="q7" value="2">
+                    <label for="q7c">Unknown</label><br>
+                </div>
+                <br>
+
+                <span id="question">
+                    Question 8
+                </span><br><br>
+                <div class="content" onclick="q8score()">
+                    Confused by letters, numbers, words, sequences, or verbal explanations?<br>
+                    <input type="radio" id="q8a" name="q8" value="0">
+                    <label for="q8a">Yes</label><br>
+                    <input type="radio" id="q8b" name="q8" value="4">
+                    <label for="q8b">No</label><br>
+                    <input type="radio" id="q8c" name="q8" value="2">
+                    <label for="q8c">Unknown</label><br>
+                </div>
+                <br>
+
+                <span id="question">
+                    Question 9
+                </span><br><br>
+                <div class="content" onclick="q9score()">
+                    Reads and rereads with little comprehension?<br>
+                    <input type="radio" id="q9a" name="q9" value="0">
+                    <label for="q9a">Yes</label><br>
+                    <input type="radio" id="q9b" name="q9" value="4">
+                    <label for="q9b">No</label><br>
+                    <input type="radio" id="q9c" name="q9" value="2">
+                    <label for="q9c">Unknown</label><br>
+                </div>
+                <br>
+
+                <span id="question">
+                    Question 10
+                </span><br><br>
+                <div class="content" onclick="q10score()">
+                    Difficulty putting thoughts into words; speaks in halting phrases; leaves sentences incomplete?<br>
+                    <input type="radio" id="q10a" name="q10" value="0">
+                    <label for="q10a">Yes</label><br>
+                    <input type="radio" id="q10b" name="q10" value="4">
+                    <label for="q10b">No</label><br>
+                    <input type="radio" id="q10c" name="q10" value="2">
+                    <label for="q10c">Unknown</label><br>
+                </div>
+                <br>
+
+                <span id="question">
+                    Question 11
+                </span><br><br>
+                <div class="content" onclick="q11score()">
+                    Can count, but has difficulty counting objects and dealing with money?<br>
+                    <input type="radio" id="q11a" name="q11" value="0">
+                    <label for="q11a">Yes</label><br>
+                    <input type="radio" id="q11b" name="q11" value="4">
+                    <label for="q11b">No</label><br>
+                    <input type="radio" id="q11c" name="q11" value="2">
+                    <label for="q11c">Unknown</label><br>
+                </div>
+                <br>
+
+                <span id="question">
+                    Question 12
+                </span><br><br>
+                <div class="content" onclick="q12score()">
+                    Does your child worry for sequences, facts and information that were not taught before?<br>
+                    <input type="radio" id="q12a" name="q12" value="0">
+                    <label for="q12a">Yes</label><br>
+                    <input type="radio" id="q12b" name="q12" value="4">
+                    <label for="q12b">No</label><br>
+                    <input type="radio" id="q12c" name="q12" value="2">
+                    <label for="q12c">Unknown</label><br>
+                </div>
+                <br>
+
+                <span id="question">
+                    Question 13
+                </span><br><br>
+                <div class="content" onclick="q13score()">
+                    Does your child omplain of dizziness, headaches or stomach aches while reading?<br>
+                    <input type="radio" id="q13a" name="q13" value="0">
+                    <label for="q13a">Yes</label><br>
+                    <input type="radio" id="q13b" name="q13" value="4">
+                    <label for="q13b">No</label><br>
+                    <input type="radio" id="q13c" name="q13" value="2">
+                    <label for="q13c">Unknown</label><br>
+                </div>
+                <br>
+
+                <span id="question">
+                    Question 14
+                </span><br><br>
+                <div class="content" onclick="q14score()">
+                    Is reading extremely difficult for your child? (Below grade or age level)<br>
+                    <input type="radio" id="q14a" name="q14" value="0">
+                    <label for="q14a">Yes</label><br>
+                    <input type="radio" id="q14b" name="q14" value="4">
+                    <label for="q14b">No</label><br>
+                    <input type="radio" id="q14c" name="q14" value="2">
+                    <label for="q14c">Unknown</label><br>
+                </div>
+                <br>
+
+                <span id="question">
+                    Question 15
+                </span><br><br>
+                <div class="content" onclick="q15score()">
+                    Is his spelling ability poor? Letters missed, reversed etc?<br>
+                    <input type="radio" id="q15a" name="q15" value="0">
+                    <label for="q15a">Yes</label><br>
+                    <input type="radio" id="q15b" name="q15" value="4">
+                    <label for="q15b">No</label><br>
+                    <input type="radio" id="q15c" name="q15" value="2">
+                    <label for="q15c">Unknown</label><br>
+                </div>
+                <br>
+
+                <span id="question">
+                    Question 16
+                </span><br><br>
+                <div class="content" onclick="q16score()">
+                    Is it difficult for him to rhyme words?(If you are not sure, play a rhyming game with your child or
+                    student)<br>
+                    <input type="radio" id="q16a" name="q16" value="0">
+                    <label for="q16a">Yes</label><br>
+                    <input type="radio" id="q16b" name="q16" value="4">
+                    <label for="q16b">No</label><br>
+                    <input type="radio" id="q16c" name="q16" value="2">
+                    <label for="q16c">Unknown</label><br>
+                </div>
+                <br>
+
+                <span id="question">
+                    Question 17
+                </span><br><br>
+                <div class="content" onclick="q17score()">
+                    Is there difficulty telling time on a clock with hands and/or tying shoes with laces?<br>
+                    <input type="radio" id="q17a" name="q17" value="0">
+                    <label for="q17a">Yes</label><br>
+                    <input type="radio" id="q17b" name="q17" value="4">
+                    <label for="q17b">No</label><br>
+                    <input type="radio" id="q17c" name="q17" value="2">
+                    <label for="q17c">Unknown</label><br>
+                </div>
+                <br>
+
+                <span id="question">
+                    Question 18
+                </span><br><br>
+                <div class="content" onclick="q18score()">
+                    "Is there difficulty finding the right words while speaking? Lots of ums, ahs, 'those things', and
+                    'that
+                    stuff'?<br>
+                    <input type="radio" id="q18a" name="q18" value="0">
+                    <label for="q18a">Yes</label><br>
+                    <input type="radio" id="q18b" name="q18" value="4">
+                    <label for="q18b">No</label><br>
+                    <input type="radio" id="q18c" name="q18" value="2">
+                    <label for="q18c">Unknown</label><br>
+                </div>
+                <br>
+
+                <span id="question">
+                    Question 19
+                </span><br><br>
+                <div class="content" onclick="q19score()">
+                    Pauses, repeats or frequent mistakes when reading aloud?<br>
+                    <input type="radio" id="q19a" name="q19" value="0">
+                    <label for="q19a">Yes</label><br>
+                    <input type="radio" id="q19b" name="q19" value="4">
+                    <label for="q19b">No</label><br>
+                    <input type="radio" id="q19c" name="q19" value="2">
+                    <label for="q19c">Unknown</label><br>
+                </div>
+                <br>
+
+                <span id="question">
+                    Question 20
+                </span><br><br>
+                <div class="content" onclick="q20score()">
+                    Unusually high or low tolerance for pain?<br>
+                    <input type="radio" id="q20a" name="q20" value="0">
+                    <label for="q20a">Yes</label><br>
+                    <input type="radio" id="q20b" name="q20" value="4">
+                    <label for="q20b">No</label><br>
+                    <input type="radio" id="q20c" name="q20" value="2">
+                    <label for="q20c">Unknown</label><br>
+                </div>
+                <br>
+                <span id="question">
+                    Question 21
+                </span><br><br>
+                <div class="content" onclick="q21score()">
+                    When reading out loud, does your child repeat words, mix up letters, 
+                    or change word order without noticing?<br>
+                    <input type="radio" id="q21a" name="q21" value="0">
+                    <label for="q21a">Yes</label><br>
+                    <input type="radio" id="q21b" name="q21" value="4">
+                    <label for="q21b">No</label><br>
+                    <input type="radio" id="q21c" name="q21" value="2">
+                    <label for="q21c">Unknown</label><br>
+                </div>
+                <br>
+                <br>
+                <span id="question">
+                    Question 22
+                </span><br><br>
+                <div class="content" onclick="q22score()">
+                    Does your child struggle with word problems — even 
+                    though he’s otherwise good at math? <br>
+                    <input type="radio" id="q22a" name="q22" value="0">
+                    <label for="q22a">Yes</label><br>
+                    <input type="radio" id="q22b" name="q22" value="4">
+                    <label for="q22b">No</label><br>
+                    <input type="radio" id="q22c" name="q22" value="2">
+                    <label for="q22c">Unknown</label><br>
+                </div>
+                <br>
+                <br>
+                <span id="question">
+                    Question 23
+                </span><br><br>
+                <div class="content" onclick="q23score()">
+                    Does your child complain of headaches, stomachaches, 
+                    or dizziness when reading?<br>
+                    <input type="radio" id="q23a" name="q23" value="0">
+                    <label for="q23a">Yes</label><br>
+                    <input type="radio" id="q23b" name="q23" value="4">
+                    <label for="q23b">No</label><br>
+                    <input type="radio" id="q23c" name="q23" value="2">
+                    <label for="q23c">Unknown</label><br>
+                </div>
+                <br>
+                <br>
+                <span id="question">
+                    Question 24
+                </span><br><br>
+                <div class="content" onclick="q24score()">
+                    Does your child struggle with word problems — even though he’s otherwise good at math?<br>
+                    <input type="radio" id="q24a" name="q24" value="0">
+                    <label for="q24a">Yes</label><br>
+                    <input type="radio" id="q24b" name="q24" value="4">
+                    <label for="q24b">No</label><br>
+                    <input type="radio" id="q24c" name="q24" value="2">
+                    <label for="q24c">Unknown</label><br>
+                </div>
+                <br>
+                <br>
+                <span id="question">
+                    Question 25
+                </span><br><br>
+                <div class="content" onclick="q25score()">
+                    Does your child spell inconsistently, misspelling words she already knows?<br>
+                    <input type="radio" id="q24a" name="q24" value="0">
+                    <label for="q24a">Yes</label><br>
+                    <input type="radio" id="q24b" name="q24" value="4">
+                    <label for="q24b">No</label><br>
+                    <input type="radio" id="q24c" name="q24" value="2">
+                    <label for="q24c">Unknown</label><br>
+                </div>
+                <br>
+                <br>
+                <span id="question">
+                    Question 26
+                </span><br><br>
+                <div class="content" onclick="q26score()">
+                    Does your child ever say that words “wiggle” or “shimmer” on the page while he’s reading?<br>
+                    <input type="radio" id="q26a" name="q26" value="0">
+                    <label for="q26a">Yes</label><br>
+                    <input type="radio" id="q26b" name="q26" value="4">
+                    <label for="q26b">No</label><br>
+                    <input type="radio" id="q26c" name="q26" value="2">
+                    <label for="q26c">Unknown</label><br>
+                </div>
+                <br>
+                <br>
+                <span id="question">
+                    Question 27
+                </span><br><br>
+                <div class="content" onclick="q27score()">
+                    After reading a passage, is your child unable to give a summary or discuss key points with you?<br>
+                    <input type="radio" id="q27a" name="q27" value="0">
+                    <label for="q27a">Yes</label><br>
+                    <input type="radio" id="q27b" name="q27" value="4">
+                    <label for="q27b">No</label><br>
+                    <input type="radio" id="q27c" name="q27" value="2">
+                    <label for="q27c">Unknown</label><br>
+                </div>
+                <br>
+                <br>
+                <span id="question">
+                    Question 28
+                </span><br><br>
+                <div class="content" onclick="q28score()">
+                    Is your child’s handwriting inconsistent? Is it less legible some days than others?<br>
+                    <input type="radio" id="q28a" name="q28" value="0">
+                    <label for="q28a">Yes</label><br>
+                    <input type="radio" id="q28b" name="q28" value="4">
+                    <label for="q28b">No</label><br>
+                    <input type="radio" id="q28c" name="q28" value="2">
+                    <label for="q28c">Unknown</label><br>
+                </div>
+                <br>
+                <br>
+                <span id="question">
+                    Question 29
+                </span><br><br>
+                <div class="content" onclick="q29score()">
+                    Is your child of average or above-average intelligence, but seems unable to read at her grade level?<br>
+                    <input type="radio" id="q29a" name="q29" value="0">
+                    <label for="q29a">Yes</label><br>
+                    <input type="radio" id="q29b" name="q29" value="4">
+                    <label for="q29b">No</label><br>
+                    <input type="radio" id="q29c" name="q29" value="2">
+                    <label for="q29c">Unknown</label><br>
+                </div>
+                <br>
+                <br>
+                <span id="question">
+                    Question 30
+                </span><br><br>
+                <div class="content" onclick="q30score()">
+                    Does your child struggle to copy letters, numbers, or symbols?<br>
+                    <input type="radio" id="q30a" name="q30" value="0">
+                    <label for="q30a">Yes</label><br>
+                    <input type="radio" id="q30b" name="q30" value="4">
+                    <label for="q30b">No</label><br>
+                    <input type="radio" id="q30c" name="q30" value="2">
+                    <label for="q21c">Unknown</label><br>
+                </div>
+                <br>
+                <br>
+                <span id="question">
+                    Question 31
+                </span><br><br>
+                <div class="content" onclick="q31score()">
+                    Does your child avoid reading altogether, or does she get easily frustrated when 
+                    completing reading-related assignments?<br>
+                    <input type="radio" id="q31a" name="q31" value="0">
+                    <label for="q31a">Yes</label><br>
+                    <input type="radio" id="q31b" name="q31" value="4">
+                    <label for="q31b">No</label><br>
+                    <input type="radio" id="q31c" name="q31" value="2">
+                    <label for="q31c">Unknown</label><br>
+                </div>
+                <br>
+                <br>
+                <span id="question">
+                    Question 32
+                </span><br><br>
+                <div class="content" onclick="q32score()">
+                    Does your child confuse his left from his right?<br>
+                    <input type="radio" id="q32a" name="q32" value="0">
+                    <label for="q32a">Yes</label><br>
+                    <input type="radio" id="q32b" name="q32" value="4">
+                    <label for="q32b">No</label><br>
+                    <input type="radio" id="q32c" name="q32" value="2">
+                    <label for="q32c">Unknown</label><br>
+                </div>
+                <br>
+                <br>
+                <span id="question">
+                    Question 33
+                </span><br><br>
+                <div class="content" onclick="q33score()">
+                    Does your child spell inconsistently, misspelling words she already knows?<br>
+                    <input type="radio" id="q33a" name="q33" value="0">
+                    <label for="q33a">Yes</label><br>
+                    <input type="radio" id="q33b" name="q33" value="4">
+                    <label for="q33b">No</label><br>
+                    <input type="radio" id="q33c" name="q33" value="2">
+                    <label for="q33c">Unknown</label><br>
+                </div>
+                <br>
+                <br>
+                <span id="question">
+                    Question 34
+                </span><br><br>
+                <div class="content" onclick="q34score()">
+                    Does your child struggle to sound out unknown words?<br>
+                    <input type="radio" id="q34a" name="q34" value="0">
+                    <label for="q34a">Yes</label><br>
+                    <input type="radio" id="q34b" name="q34" value="4">
+                    <label for="q34b">No</label><br>
+                    <input type="radio" id="q34c" name="q34" value="2">
+                    <label for="q34c">Unknown</label><br>
+                </div>
+                <br>
+                <span id="question">
+                    Question 35
+                </span><br><br>
+                <div class="content" onclick="q35score()">
+                    Does it seem like your child is better at expressing himself verbally than he is at writing?<br>
+                    <input type="radio" id="q35a" name="q35" value="0">
+                    <label for="q35a">Yes</label><br>
+                    <input type="radio" id="q35b" name="q35" value="4">
+                    <label for="q35b">No</label><br>
+                    <input type="radio" id="q35c" name="q35" value="2">
+                    <label for="q35c">Unknown</label><br>
+                </div>
+                <br>
+                <span id="question">
+                    Question 36
+                </span><br><br>
+                <div class="content" onclick="q36score()">
+                    Does your child have difficulty budgeting her time or following a schedule?<br>
+                    <input type="radio" id="q36a" name="q36" value="0">
+                    <label for="q36a">Yes</label><br>
+                    <input type="radio" id="q36b" name="q36" value="4">
+                    <label for="q36b">No</label><br>
+                    <input type="radio" id="q36c" name="q36" value="2">
+                    <label for="q36c">Unknown</label><br>
+                </div>
+                <br>
+                <span id="question">
+                    Question 37
+                </span><br><br>
+                <div class="content" onclick="q37score()">
+                    Does your child have difficulty sustaining attention? Does she space out or get labeled a “daydreamer?<br>
+                    <input type="radio" id="q37a" name="q37" value="0">
+                    <label for="q37a">Yes</label><br>
+                    <input type="radio" id="q37b" name="q37" value="4">
+                    <label for="q37b">No</label><br>
+                    <input type="radio" id="q37c" name="q37" value="2">
+                    <label for="q37c">Unknown</label><br>
+                </div>
+                <br>
+                <span id="question">
+                    Question 38
+                </span><br><br>
+                <div class="content" onclick="q38score()">
+                    Does your child have difficulty knowing where to begin a task and/or how to proceed from there<br>
+                    <input type="radio" id="q38a" name="q38" value="0">
+                    <label for="q38a">Yes</label><br>
+                    <input type="radio" id="q38b" name="q38" value="4">
+                    <label for="q38b">No</label><br>
+                    <input type="radio" id="q38c" name="q38" value="2">
+                    <label for="q38c">Unknown</label><br>
+                </div>
+                <br>
+                <span id="question">
+                    Question 39
+                </span><br><br>
+                <div class="content" onclick="q39score()">
+                    Did your child learn language late and/or have a limited vocabulary?<br>
+                    <input type="radio" id="q39a" name="q39" value="0">
+                    <label for="q39a">Yes</label><br>
+                    <input type="radio" id="q39b" name="q39" value="4">
+                    <label for="q39b">No</label><br>
+                    <input type="radio" id="q39c" name="q39" value="2">
+                    <label for="q39c">Unknown</label><br>
+                </div>
+                <br>
+                <span id="question">
+                    Question 40
+                </span><br><br>
+                <div class="content" onclick="q40score()">
+                    Does your child have very messy handwriting or does he hold a pencil awkwardly<br>
+                    <input type="radio" id="q40a" name="q40" value="0">
+                    <label for="q40a">Yes</label><br>
+                    <input type="radio" id="q40b" name="q40" value="4">
+                    <label for="q40b">No</label><br>
+                    <input type="radio" id="q40c" name="q40" value="2">
+                    <label for="q40c">Unknown</label><br>
+                </div>
+                <br>
+                <span id="question">
+                    Question 41
+                </span><br><br>
+                <div class="content" onclick="q41score()">
+                    Does your child have trouble organizing what he or she wants to say or thinking of 
+                    the word he or she needs when writing or in conversation<br>
+                    <input type="radio" id="q41a" name="q41" value="0">
+                    <label for="q41a">Yes</label><br>
+                    <input type="radio" id="q41b" name="q41" value="4">
+                    <label for="q41b">No</label><br>
+                    <input type="radio" id="q41c" name="q41" value="2">
+                    <label for="q41c">Unknown</label><br>
+                </div>
+                <br>
+                <span id="question">
+                    Question 42
+                </span><br><br>
+                <div class="content" onclick="q42score()">
+                    Does your child have trouble retelling a story in order (what happened first, second, third)?<br>
+                    <input type="radio" id="q42a" name="q42" value="0">
+                    <label for="q42a">Yes</label><br>
+                    <input type="radio" id="q42b" name="q42" value="4">
+                    <label for="q42b">No</label><br>
+                    <input type="radio" id="q42c" name="q42" value="2">
+                    <label for="q42c">Unknown</label><br>
+                </div>
+                <br>
+                <span id="question">
+                    Question 43
+                </span><br><br>
+                <div class="content" onclick="q43score()">
+                    Does your child have trouble telling time or conceptualizing the passage of time?<br>
+                    <input type="radio" id="q43a" name="q43" value="0">
+                    <label for="q43a">Yes</label><br>
+                    <input type="radio" id="q43b" name="q43" value="4">
+                    <label for="q43b">No</label><br>
+                    <input type="radio" id="q43c" name="q43" value="2">
+                    <label for="q43c">Unknown</label><br>
+                </div>
+                <br>
+                <span id="question">
+                    Question 44
+                </span><br><br>
+                <div class="content" onclick="q44score()">
+                    Does your child ignore the social rules of conversations, such as taking turns or standing a 
+                    comfortable distance from his or her conversation partner?<br>
+                    <input type="radio" id="q44a" name="q44" value="0">
+                    <label for="q44a">Yes</label><br>
+                    <input type="radio" id="q44b" name="q44" value="4">
+                    <label for="q44b">No</label><br>
+                    <input type="radio" id="q44c" name="q44" value="2">
+                    <label for="q44c">Unknown</label><br>
+                </div>
+                <br>
+                <span id="question">
+                    Question 45
+                </span><br><br>
+                <div class="content" onclick="q45score()">
+                    Does or did your child have trouble with buttons, hooks, snaps, and zippers? 
+                    Or with learning to tie his or her shoes?<br>
+                    <input type="radio" id="q45a" name="q45" value="0">
+                    <label for="q45a">Yes</label><br>
+                    <input type="radio" id="q45b" name="q45" value="4">
+                    <label for="q45b">No</label><br>
+                    <input type="radio" id="q45c" name="q45" value="2">
+                    <label for="q45c">Unknown</label><br>
+                </div>
+                <br>
+                <span id="question">
+                    Question 46
+                </span><br><br>
+                <div class="content" onclick="q46score()">
+                    Does your child mispronounce words or use an incorrect word that sounds similar?<br>
+                    <input type="radio" id="q46a" name="q46" value="0">
+                    <label for="q46a">Yes</label><br>
+                    <input type="radio" id="q46b" name="q46" value="4">
+                    <label for="q46b">No</label><br>
+                    <input type="radio" id="q46c" name="q46" value="2">
+                    <label for="q46c">Unknown</label><br>
+                </div>
+                <br>
+                <span id="question">
+                    Question 47
+                </span><br><br>
+                <div class="content" onclick="q47score()">
+                    Does your child have trouble understanding humor, puns, comic strips, idioms, and sarcasm?<br>
+                    <input type="radio" id="q47a" name="q47" value="0">
+                    <label for="q47a">Yes</label><br>
+                    <input type="radio" id="q47b" name="q47" value="4">
+                    <label for="q47b">No</label><br>
+                    <input type="radio" id="q47c" name="q47" value="2">
+                    <label for="q47c">Unknown</label><br>
+                </div>
+                <br>
+                <span id="question">
+                    Question 48
+                </span><br><br>
+                <div class="content" onclick="q48score()">
+                    Does your child have a hard time understanding what he or she reads?<br>
+                    <input type="radio" id="q48a" name="q48" value="0">
+                    <label for="q48a">Yes</label><br>
+                    <input type="radio" id="q48b" name="q48" value="4">
+                    <label for="q48b">No</label><br>
+                    <input type="radio" id="q48c" name="q48" value="2">
+                    <label for="q44c">Unknown</label><br>
+                </div>
+                <br>
+                <span id="question">
+                    Question 49
+                </span><br><br>
+                <div class="content" onclick="q49score()">
+                    Does your child appear awkward or clumsy, dropping, spilling, or knocking things over a lot?<br>
+                    <input type="radio" id="q49a" name="q49" value="0">
+                    <label for="q49a">Yes</label><br>
+                    <input type="radio" id="q49b" name="q49" value="4">
+                    <label for="q49b">No</label><br>
+                    <input type="radio" id="q49c" name="q49" value="2">
+                    <label for="q49c">Unknown</label><br>
+                </div>
+                <br>
+                <span id="question">
+                    Question 50
+                </span><br><br>
+                <div class="content" onclick="q50score()">
+                    Does your child ignore the social rules of conversations, such as taking turns or standing a 
+                    comfortable distance from his or her conversation partner?<br>
+                    <input type="radio" id="q50a" name="q50" value="0">
+                    <label for="q50a">Yes</label><br>
+                    <input type="radio" id="q50b" name="q50" value="4">
+                    <label for="q50b">No</label><br>
+                    <input type="radio" id="q50c" name="q50" value="2">
+                    <label for="q50c">Unknown</label><br>
+                </div>
+                <br>
+                
+                
+                <span id="button" onclick="submitscore()">
+                    SUBMIT
+                </span>
+            </div>
+        </form>
+    </div>
+    <div class="footer">
+        <br>
+    </div>
+    <script src="{{ url_for('static', filename='survey.js') }}">
+       
+
+    </script>
+</body>
+
+</html>
